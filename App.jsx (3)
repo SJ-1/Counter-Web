@@ -1,0 +1,17 @@
+import React, { useState } from "react";
+
+let App = () =>{
+    let time = new Date().toLocaleTimeString();
+    let [ctime , utime] = useState(time);
+
+    let UpdatedTime = () => {
+        let Time = new Date().toLocaleTimeString();
+        utime(Time);
+    }
+    setInterval(UpdatedTime,1000); //1000 => hr second ky baad
+    return(
+        <h1>{ctime}</h1>
+    );
+}
+export default App;
+
