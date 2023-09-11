@@ -1,0 +1,30 @@
+import React, { useState } from "react"; //whenever state change => hooks 
+
+let App = () => {
+    let background = "#33053f";
+    let [bg , upbg] = useState(background);
+    let [name , upname] = useState("Click Me");
+    
+    let Updated = () =>{
+
+        let back = "blue";
+        let name1 = "Ayo :3";
+        upbg(back);
+        upname(name1);
+    }
+    let Leave = () =>{
+        let back =  "#33053f";
+        let text = "Click Me";
+        upbg(back);
+        upname(text);
+
+    }
+    return(
+        <>
+            <div style={{backgroundColor: bg}}>
+                <button onMouseEnter={Updated} onMouseLeave={Leave}>{name}</button>
+            </div>
+        </>
+    );
+}
+export default App;
