@@ -1,0 +1,18 @@
+import React, { useState } from "react";
+
+let App = () => {
+    let time = new Date().toLocaleTimeString(); // current time
+    const [ctime,utime] = useState(time); //array destructing with hook
+  
+    let UpdatedTime = () => {
+        let cTime = new Date().toLocaleTimeString(); //definig again
+        utime(cTime);
+    }
+    return(
+        <>
+        <h1>{ctime}</h1>
+        <button onClick={UpdatedTime}>Get Time</button> 
+        </>
+    );
+}
+export default App;
